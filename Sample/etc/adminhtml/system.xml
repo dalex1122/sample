@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="alexander" translate="label" sortOrder="550">
+            <label><![CDATA[<span class="alexander-logo">Alexsample Extensions</span>]]></label>
+        </tab>
+        <section id="alex_sample" showInDefault="1" showInWebsite="1" showInStore="1" type="text" translate="label"
+                 sortOrder="100">
+            <label>Sample</label>
+            <tab>alexander</tab>
+            <resource>Alexsample_Sample::sample_config</resource>
+            <group id="general" showInDefault="1" sortOrder="10">
+                <label>General Settings</label>
+
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <tooltip><![CDATA[Enable/disable]]></tooltip>
+                </field>
+
+                <field id="decimal_factor" translate="label" type="text" sortOrder="20" showInDefault="1">
+                    <label>Decimal factor</label>
+                    <tooltip><![CDATA[Decimal factor]]></tooltip>
+                    <validate>validate-decimal-factor</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

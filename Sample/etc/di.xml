@@ -1,0 +1,11 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!--DATA-->
+    <preference for="Alexsample\Sample\Api\Data\OrderDataInterface"
+                type="Alexsample\Sample\Model\OrderData" />
+
+    <!--REPOSITORY-->
+    <preference for="Alexsample\Sample\Api\Repository\OrderDataRepositoryInterface"
+                type="Alexsample\Sample\Repository\OrderDataRepository"/>
+
+</config>
